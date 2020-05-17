@@ -1,0 +1,191 @@
+﻿@model IEnumerable<webapi.Models.Wb>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Kana)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ip)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Place)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Back)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ok)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mail2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Memo1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Memo2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Memo3)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Memo4)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Memo5)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdateDay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdateTime)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Business)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdateIp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.InterPhone)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Kana)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Place)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Back)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ok)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Mail2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memo1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memo2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memo3)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memo4)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Memo5)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateDay)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Business)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdateIp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InterPhone)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Seq">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Seq">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Seq">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
