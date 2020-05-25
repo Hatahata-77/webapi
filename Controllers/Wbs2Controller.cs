@@ -21,25 +21,32 @@ namespace webapi.Controllers
         }
 
         // GET: api/Wbs2
-        [HttpGet]
+        [HttpGet()]
         public async Task<ActionResult<IEnumerable<Wb>>> GetWb()
         {
-            return await _context.Wb.Where(wb => (wb.Seq.StartsWith("33") || wb.Seq.StartsWith("34")) && ! string.IsNullOrWhiteSpace(wb.Id)).ToArrayAsync();
+            return await _context.Wb.Where(wb => (wb.Seq.StartsWith("33") || wb.Seq.StartsWith("34")) && !string.IsNullOrWhiteSpace(wb.Id)).OrderBy(wb => wb.Seq).ToArrayAsync();
         }
 
-        // GET: api/Wbs2/5
+        // GET: api/Wbs2/id
         [HttpGet("{id}")]
-        public async Task<ActionResult<Wb>> GetWb(string id)
+        public async Task<ActionResult<IEnumerable<Wb>>> GetWb(string id)
         {
-            var wb = await _context.Wb.FindAsync(id);
-
-            if (wb == null)
-            {
-                return NotFound();
-            }
-
-            return wb;
+            return await _context.Wb.Where(wb => wb.Seq.StartsWith(id) && ! string.IsNullOrWhiteSpace(wb.Id)).OrderBy(wb => wb.Seq).ToArrayAsync();
         }
+
+        //// GET: api/Wbs2/5
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<Wb>> GetWb(string id)
+        //{
+        //    var wb = await _context.Wb.FindAsync(id);
+
+        //    if (wb == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return wb;
+        //}
 
         // PUT: api/Wbs2/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
